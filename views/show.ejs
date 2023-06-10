@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= fruit.name %></title>
+    <%- include("imports.ejs") %>
+  </head>
+  <body>
+    <h1>name: <%= fruit.name %></h1>
+    <ul>
+      <li>color: <%= fruit.color %></li>
+      <li class="<%= readyClass %>">readyToEat: <%= fruit.readyToEat %></li>
+    </ul>
+    <a href="/fruit/<%= id %>/edit"><button>Edit</button></a>
+    
+    <h3><a href="/fruit">GO BACK TO LIST OF FRUITS</a></h3>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits</title>
+    <%- include("imports.ejs") %>
+</head>
+<body>
+    <h1>The Fruits App</h1>
+
+    <a href="/fruit/new"><button>Create New Fruit</button></a>
+    
+    <ul>
+        <% for(let i = 0; i < fruits.length; i++){ %>
+
+            <li><a href="/fruit/<%= i %>"><%= fruits[i].name %></a></li>
+
+        <% } %>
+    </ul>
+    
+</body>
+</html>
