@@ -11,7 +11,7 @@ const fruitsRouter = require("./controllers/fruits")
 // MIDDLEWARE (Functions that run between the request and response)
 app.use(morgan("dev")) // SETS UP OUT LOGGING MIDDLEWARE
 app.use(express.static("public")) // treat the public folder as a static file server
-app.use(express.urlencoded({extended:false}))//middleware for parsing urlencoded
+app.use(express.urlencoded({extended:false}))//middle ware for parsing urlencoded
 app.use(methodOverride("_method")) // method will be overridden when it sees a query string like ?_method="put"
 app.use("/fruit", fruitsRouter) //use the fruitsRouter for any urls that start with /fruit
 

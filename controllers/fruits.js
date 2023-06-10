@@ -11,14 +11,14 @@ const router = express.Router()
 // INDEX - GET - LIST ALL FRUITS - /fruit
 router.get("/", (req, res) => {
     // render an ejs template with all the fruits
-    res.render("index.ejs", {fruits})
+    res.render("fruits/index.ejs", {fruits})
   })
   
   //************// HAS TO BE AFTER INDEX AND BEFORE THE SHOW PAGE //**************** */
   // NEW  -  GET  -  SHOW A FORM TO CREATE A FRUIT
   router.get("/new", (req, res) => {
       // render the new template
-      res.render("new.ejs")
+      res.render("fruits/new.ejs")
   })
   
   // DESTROY - DELETE - DELETE A FRUIT
@@ -62,7 +62,7 @@ router.get("/", (req, res) => {
       // get the fruit using the index
       const fruit = fruits[id]
       // render the template, pass the fruit and index
-      res.render("edit.ejs", {fruit, id})
+      res.render("fruits/edit.ejs", {fruit, id})
   })
   
   // SHOW - GET - SHOWS ONE FRUIT - /fruit/:id
@@ -74,7 +74,7 @@ router.get("/", (req, res) => {
       // dynamically set a class
       const readyClass = fruit.readyToEat ? "green" : "red"
       // render a template with the fruit
-      res.render("show.ejs", {fruit, readyClass, id})
+      res.render("fruits/show.ejs", {fruit, readyClass, id})
   })
 
 // EXPORT
