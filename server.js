@@ -32,6 +32,14 @@ app.get("/fruit/new", (req, res) => {
 })
 
 // DESTROY - DELETE - DELETE A FRUIT
+app.delete("/fruit/:id", (req, res) =>{
+    // grab the id from the url
+    const id = req.params.id
+    // splice object out of the array
+    fruits.splice(id, 1)
+    // redirect user back to index
+    res.redirect("/fruit")
+})
 
 // UPDATE - PUT - UPDATE A FRUIT
 app.put("/fruit/:id", (req, res) => {
